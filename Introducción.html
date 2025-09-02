@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Introducción – Presentación del equipo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="wrapper">
+      <h1>Presentación del equipo</h1>
+      <p class="subtitle">Proyecto/Curso: <span class="project">Desarrollo de Software</span></p>
+    </div>
+  </header>
+
+  <main class="wrapper">
+    <section class="cards" aria-label="Miembros del equipo">
+      <!-- === Joseph === -->
+      <article class="card">
+        <img class="avatar" src="img/joseph-guerra.jpg" alt="Foto de Joseph Guerra" loading="lazy" />
+        <div class="card-body">
+          <h2 class="name">Joseph Guerra</h2>
+          <p class="role"><strong>Rol:</strong> Estudiante</p>
+          <p class="info"><strong>Edad:</strong> 21</p>
+          <p class="info"><strong>Carrera:</strong> Licenciatura en Desarrollo y Gestión de Software</p>
+          <p class="info"><strong>Pasatiempos:</strong> Escuchar música, cantar, escribir, armar modelos a escala.</p>
+        </div>
+      </article>
+
+      <!-- === Carlos === -->
+      <article class="card">
+        <img class="avatar" src="img/carlos-concepcion.jpg" alt="Foto de Carlos Concepción" loading="lazy" />
+        <div class="card-body">
+          <h2 class="name">Carlos Concepción</h2>
+          <p class="role"><strong>Rol:</strong> Estudiante</p>
+          <p class="info"><strong>Edad:</strong> 19</p>
+          <p class="info"><strong>Carrera:</strong> Licenciatura en Desarrollo y Gestión de Software</p>
+          <p class="info"><strong>Pasatiempos:</strong> Escuchar música, fútbol, ver series y animes.</p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrapper">
+      <p>© <span id="year"></span> Equipo – Página de introducción.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
