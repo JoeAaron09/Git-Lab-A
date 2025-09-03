@@ -1,0 +1,145 @@
+:root{
+  --bg: #0f172a;          /* fondo oscuro (slate-900) */
+  --card: #111827;        /* cartas ligeramente más claras (gray-900) */
+  --muted: #94a3b8;       /* texto secundario (slate-400) */
+  --text: #e5e7eb;        /* texto principal (gray-200) */
+  --brand: #22d3ee;       /* acento (cyan-400) */
+  --brand-strong: #06b6d4;/* acento hover (cyan-500) */
+  --ring: rgba(34,211,238,.35);
+  --radius: 16px;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  background: radial-gradient(1200px 600px at 20% -10%, rgba(34,211,238,.08), transparent 60%),
+              radial-gradient(1000px 500px at 120% 10%, rgba(14,165,233,.08), transparent 60%),
+              var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+
+.wrapper{
+  max-width: 1100px;
+  padding: clamp(16px, 3vw, 32px);
+  margin: 0 auto;
+}
+
+/* Header */
+.header{
+  position: sticky;
+  top:0;
+  z-index: 10;
+  background: linear-gradient(180deg, rgba(15,23,42,.95), rgba(15,23,42,.75));
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.header h1{
+  margin: 0 0 6px;
+  font-size: clamp(28px, 4vw, 38px);
+  letter-spacing: .3px;
+}
+.subtitle{
+  margin:0;
+  color: var(--muted);
+}
+.project{ color: var(--brand); font-weight:600; }
+
+/* Cards grid */
+.cards{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: clamp(16px, 2.5vw, 28px);
+  margin-top: clamp(16px, 3vw, 28px);
+}
+
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.00)),
+              var(--card);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.card:hover{
+  transform: translateY(-4px);
+  border-color: rgba(34,211,238,.35);
+  box-shadow: 0 16px 40px rgba(0,0,0,.45);
+}
+
+.card .avatar{
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 18px auto 0;
+  display:block;
+  border: 2px solid rgba(255,255,255,.10);
+}
+
+/* Opcional: si prefieres foto cuadrada tipo perfil, cambia .avatar arriba por height fijo y border-radius */
+/*
+.card .avatar{
+  width: 120px; height: 120px; object-fit: cover; border-radius: 50%;
+  margin: 16px auto 0; display:block; border: 2px solid rgba(255,255,255,.06);
+}
+*/
+
+.card-body{
+  padding: 12px clamp(14px, 2vw, 20px) 20px;
+}
+
+.name{
+  margin:0 0 6px;
+  font-size: 20px;
+  line-height: 1.25;
+}
+
+.role{
+  margin:0 0 10px;
+  color: var(--brand);
+}
+
+.info{
+  margin:0 0 12px;
+  color: var(--text);
+  opacity:.95;
+}
+
+.contact{
+  list-style:none;
+  padding:0; margin:0;
+  display:flex; gap:12px; flex-wrap:wrap;
+}
+.contact a{
+  display:inline-block;
+  padding:8px 12px;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius: 999px;
+  color: var(--text);
+  text-decoration:none;
+  transition: background .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.contact a:hover{
+  background: rgba(34,211,238,.08);
+  border-color: var(--brand);
+  box-shadow: 0 0 0 6px var(--ring);
+}
+
+/* Footer */
+.footer{
+  margin-top: 24px;
+  border-top: 1px solid rgba(255,255,255,.06);
+  background: rgba(255,255,255,.02);
+}
+.footer p{ margin: 0; padding: 12px 0; color: var(--muted); }
+
+/* Accesibilidad base */
+a:focus-visible, button:focus-visible{
+  outline: 3px solid var(--brand);
+  outline-offset: 2px;
+}
